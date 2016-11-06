@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Psychic Game</title>
+	<title>Psychadelic</title>
 
 </head>
 <body>
@@ -9,80 +9,71 @@
 
 
 
+<h1 class="title">Psychadelic/h1>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
 
-<header>Pyschadelic</header>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <div class="container">
-        
-        <h3 class="tagline">Guess What letter the computer is thinking of?</h3>
-        <br>
-        <h3 class="wins">Wins:</h3><div id="win">0</div>
-        <br>
-        <h3 class="losses">Losses:</h3><div id="loss">0</div>
-        <br>
-        <h3 class="guesses">Guesses:</h3><div id="guesses">8</div>
-        <br>
-        <h3 class="guessesf">Guesses so far:</h3> <div id="lettersGuessed">_</div>
-        <br>
-        <br>
-    </div>
-
-        <script type="text/javascript">
-        
-        // global variables    
-        var wins = 0;
-        var losses = 0;
-        var guesses = 0;
-        var guessesLeft = 8;
-        var lettersGuessed = [];
-
-        // On Click letters Array
-        var alphabet = ["a","b","c","d","e","f","g","h","i","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","z"];
-
-
-
-        document.onkeyup = function() {
-            var userguess = String.fromCharCode(event.keyCode).toLowerCase();
-            var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
-
-          
-            console.log(userguess);
-            console.log(computerGuess);
-
-        if(userguess) {
-            document.getElementById("guesses").innerHTML = guessesLeft--;
-            if (guessesLeft==0);
-            	reset()0-[p;
-
-
-
-        lettersGuessed.push(userguess);
-        if(userguess === computerGuess) {
-            document.getElementById("win").innerHTML = wins++;
-        } 
-
-        else if(guessesLeft < 0) {
-        
-            document.getElementById("loss").innerHTML = losses++;
-        document.getElementById("guesses").reset(guessesLeft);
-            document.getElementById("lettersGuessed").reset(lettersGuessed);
-            }
-
+   <div class="container">
        
+       <h3 class="tagline">Guess What letter the computer is thinking of</h3>
+       <br>
+       <h3 class="wins">Wins:</h3><div id="win">0</div>
+       <br>
+       <h3 class="losses">Losses:</h3><div id="loss">0</div>
+       <br>
+       <h3 class="guesses">Guesses:</h3><div id="guesses">8</div>
+       <br>
+       <h3 class="guessesf">Guesses so far:</h3> <div id="lettersGuessed">_</div>
+       <br>
+       <br>
+   </div>
+
+       <script type="text/javascript">
+       
+       // global variables    
+       var wins = 0;
+       var losses = 0;
+       var guesses = 0;
+       var guessesLeft = 8;
+       var lettersGuessed = [];
+
+       // On Click letters Array
+       var alphabet = ["a","b","c","d","e","f","g","h","i","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","z"];
 
 
-        
-          document.getElementById("lettersGuessed").innerHTML = lettersGuessed.join(" | ");
 
-            
-        }
+       document.onkeyup = function() {
+           var userguess = String.fromCharCode(event.keyCode).toLowerCase();
+           var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+           console.log(userguess);
+           console.log(computerGuess);
+n.
+       if(userguess) {
+           document.getElementById("guesses").innerHTML = guessesLeft--;
+       }
 
-        var reset= function(){
+
+       lettersGuessed.push(userguess);
+
+
+       if(userguess === computerGuess) {
+           document.getElementById("win").innerHTML = wins++;
+       } else if(guessesLeft < 0) {
+       
+           document.getElementById("loss").innerHTML = losses++;
+           location.reload(guessesLeft);
+           document.getElementById("guesses").reset(guesses);
+           document.getElementById("lettersGuessed").reset(lettersGuessed);
+           }
+
+       		document.getElementById("lettersGuessed").innerHTML = lettersGuessed.join(" | ");
+
+           
+       }
+ var reset= function(){
 
         	if (guessesLeft==0)
         		guesses=0;
@@ -95,10 +86,14 @@
         reset();
 
         }
+       
+       
+
+       
 
 
 
-        </script>
+       </script>
 
-    </body>
+   </body>
 </html>
